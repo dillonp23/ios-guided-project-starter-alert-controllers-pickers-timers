@@ -18,6 +18,7 @@ enum CountdownState {
     case started // countdown is active and counting down
     case finished // countdown has reached 0 and is not active
     case reset // countdown is at initial time value and not active
+    case stopped
 }
 
 class Countdown {
@@ -63,6 +64,15 @@ class Countdown {
         timer = Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true, block: updateTimer(timer:))
         stopDate = Date(timeIntervalSinceNow: duration)
         state = .started
+    }
+    
+    func stop() {
+        cancelTimer()
+        let stopDate = Date(timeIntervalSinceReferenceDate: duration)
+        if let stopTime = TimeInterval("\(stopDate)") {
+                timer = Timer.scheduledTimer(withTimeInterval: stopTime, repeats: false, block: updateTimer(timer:))
+            }
+        state = .stopped
     }
     
     func reset() {

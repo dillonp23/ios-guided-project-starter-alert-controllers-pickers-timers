@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aNU-q6-FuS">
-                                <rect key="frame" x="16" y="362.5" width="382" height="479.5"/>
+                                <rect key="frame" x="16" y="294.5" width="382" height="547.5"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGQ-Xx-EIA">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="216"/>
@@ -43,8 +43,22 @@
                                             <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yrs-m6-GBz"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jpu-Eo-y6Q">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0i-1f-BZn">
                                         <rect key="frame" x="0.0" y="419.5" width="382" height="60"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="6zj-k0-9gj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                        <state key="normal" title="STOP">
+                                            <color key="titleColor" red="0.99288719889999999" green="0.99361187220000002" blue="0.99976140260000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2oE-90-qDq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jpu-Eo-y6Q">
+                                        <rect key="frame" x="0.0" y="487.5" width="382" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="ntf-sG-IyC"/>
                                         </constraints>
@@ -71,6 +85,7 @@
                     <connections>
                         <outlet property="countdownPicker" destination="QGQ-Xx-EIA" id="c32-OC-Rut"/>
                         <outlet property="startButton" destination="gZZ-5z-EvK" id="sA1-Zm-Ban"/>
+                        <outlet property="stopButton" destination="V0i-1f-BZn" id="dFW-sA-Abm"/>
                         <outlet property="timeLabel" destination="C4X-i4-BIk" id="d0J-Qk-9dj"/>
                     </connections>
                 </viewController>
