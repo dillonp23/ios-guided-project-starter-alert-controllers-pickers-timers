@@ -37,6 +37,8 @@ class CountdownViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
+//        let timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: timerFinished(_:))
+        
         
     }
     
@@ -47,6 +49,9 @@ class CountdownViewController: UIViewController {
     // MARK: - Private
     
     private func showAlert() {
+        let alert = UIAlertController(title: "Timer Finished!", message: "Your countdown is over.", preferredStyle: .alert) // creating an alert controller
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil)) // adding an action... if you pass nil, tapping button will dismiss alert controller
+        self.present(alert, animated: true) // now show the alert
         
     }
     
@@ -55,6 +60,7 @@ class CountdownViewController: UIViewController {
     }
     
     private func timerFinished(_ timer: Timer) {
+        showAlert()
     }
     
     private func string(from duration: TimeInterval) -> String {
